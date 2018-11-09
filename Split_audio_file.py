@@ -9,12 +9,11 @@ def match_target_amplitude(aChunk, target_dBFS):
     change_in_dBFS = target_dBFS - aChunk.dBFS
     return aChunk.apply_gain(change_in_dBFS)
 
-song = AudioSegment.from_mp3("your_audio.mp3")
-
+song = AudioSegment.from_mp3("zizou.mp3")
 # chek the chanel of audio :If your original audio is stereo (channels = 2) , chunks will be stereo.
-if song.channels = 2:
+if song.channels == 2:
 	print('the audio file is stereo')
-	
+
 #split track where silence is 2 seconds or more and get chunks
 
 chunks = split_on_silence(song, 
