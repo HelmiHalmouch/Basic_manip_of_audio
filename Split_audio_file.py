@@ -11,6 +11,10 @@ def match_target_amplitude(aChunk, target_dBFS):
 
 song = AudioSegment.from_mp3("your_audio.mp3")
 
+# chek the chanel of audio :If your original audio is stereo (channels = 2) , chunks will be stereo.
+if song.channels = 2:
+	print('the audio file is stereo')
+	
 #split track where silence is 2 seconds or more and get chunks
 
 chunks = split_on_silence(song, 
@@ -37,4 +41,3 @@ for i, chunk in enumerate(chunks):
     #Export audio chunk with new bitrate
     print("exporting chunk{0}.mp3".format(i) )
     normalized_chunk.export(".//chunk{0}.mp3".format(i), bitrate='192k', format="mp3")
-    
